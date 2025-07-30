@@ -4,21 +4,155 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <title>Professional Legal Services</title>
+        <Style>
+            
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: #F0F4F8;
+            }
+            h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            h2{
+                font-size: 28px;
+                margin: 20px 100px 20px 100px;
+                color: #1E3A5F;
+                text-align: center;
+            }
+
+            h3 {
+                font-size: 24px;
+                margin: 10px 0;
+                padding-left: 20px;
+                color: #1E3A5F;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+
+            footer {
+                text-align: center;
+                padding: 20px;
+                background-color: #1E3A5F;
+                color: white;
+            }
+            .about {
+                background-color: #E2E8F0;
+                padding: 50px 1px;
+                margin: 20px 100px;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                border-bottom: 5px solid #1E3A5F;
+                border-top: 5px solid #1E3A5F ;
+            }
+            
+            .about p{
+                margin: 0 100px 20px 300px;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            .service-list {               
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                padding: 0 50px;
+            }
+
+            .service-list > div {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                text-align: center;
+                
+                flex: 0 1 auto; /* Allow natural width */
+                max-width: 300px; /* Optional: limit max width */
+
+            }
+            
+            .service-list img {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 10px;
+            }
+ 
+
+            .header {
+                background-color:#1E3A5F;
+                  font-family:courier;
+                  text-align:center;
+                  padding:50px;
+                  color: white;
+            }
+
+            .service-list p{
+                text-align: center;
+                padding: 0 50px;
+            }
+            .contact p{
+                margin: 0 0px 20px 20px;
+                font-size: 16px;
+                line-height: 1.5;
+                text-align: center;
+            }
+        </Style>
     </head>
     <body>
 
-        <div style="background-color:#1E3A5F;
-                  font-family:font-family:courier;
-                  text-align:center;
-                  padding:50px;
-                  color: white;">
+        <div class ="header">
             <h1>Professional Legal Services</h1>
 
             <p>Experienced Attorneys providing <br> comprehensive legal solutions</p>
+            <button>Get Strated</button>
         </div>
-        <div>
-            
-        </div>
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-list">
+                <div>
+                    <img src="civilLaw.png" alt="Civil Law Icon">
+                    <h3>Civil Law</h3>
+                    <p>Legal services for civil disputes and resolutions.</p>              
+                </div>
+
+                <div>
+                    <img src="corporateLaw.png" alt="Corporate Law Icon">
+                    <h3>Corporate Law</h3>
+                    <p>Business legal solutions and corporate compliance.</p>
+                </div>
+
+                <div>
+                    <img src="familyLaw.png" alt="Family Law Icon">
+                    <h3>Family Law</h3>
+                    <p>Support for family-related legal matters.</p>
+                </div>
+
+                <div>  
+                    <img src="realEstateLaw.png" alt="Real Estate Law Icon">
+                    <h3>Real Estate</h3>
+                    <p>Legal assistance for property and real estate issues.</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="about">
+            <h2>Why Choose Us?</h2>
+            <p>With over 20 years of experience, our team of dedicated attorneys is here to provide you with the best legal representation.</p>
+
+            <h2 class="contact">Get in Touch</h2>
+            <p>Email: test@gmail.com
+            <p >Website: www.legalservices.com</p>
+            <p>Contact: +1 (123) 456-7890</p>
+            <p>Address: 123 Legal St, Law City, State, 12345</p>
+        </section>
+        
+   
 
 
 
