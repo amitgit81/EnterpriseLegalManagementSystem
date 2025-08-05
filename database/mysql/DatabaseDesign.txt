@@ -1,0 +1,72 @@
+🧠 Problem-Solving Approach to Schema Design
+Step 1: Understand the Domain
+Ask:
+
+What entities are involved? (Clients, Lawyers, Cases, Documents)
+What are their relationships?
+-----------------------------------------
+Step 2: Identify Tables and Fields
+----------------------------------------
+Table		Key Fields
+clients		client_id, name, email, phone
+lawyers		lawyer_id, name, specialization
+cases		case_id, client_id, lawyer_id, case_type, status, opened_date
+documents	doc_id, case_id, file_name, uploaded_on
+status_log	log_id, case_id, status, updated_on
+
+---------------------------------------------------
+Step 3: Define Relationships
+--------------------------------------------------
+One client can have many cases.
+One lawyer can handle many cases.
+One case can have many documents and status updates.
+
+---------------------------------------------------
+Step 4: Write SQL to Create Schem
+--------------------------------------------------
+CREATE DATABASE legal_case_mgmt;
+USE legal_case_mgmt;
+
+CREATE TABLE clients (
+    client_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    phone VARCHAR(20)
+);
+
+CREATE TABLE lawyers (
+    lawyer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    specialization VARCHAR(100)
+);
+
+CREATE TABLE cases (
+    case_id INT AUTO_INCREMENT PRIMARY KEY,
+    client_id INT,
+    lawyer_id INT,
+    case_type VARCHAR(50),
+    status VARCHAR(50),
+    opened_date DATE,
+    FOREIGN KEY (client_id) REFERENCES clients(client_id),
+    FOREIGN KEY (lawyer_id) REFERENCES lawyers(lawyer_id)
+);
+
+CREATE TABLE documents (
+    doc_id INT AUTO_INCREMENT PRIMARY KEY,
+    case_id INT,
+    file_name VARCHAR(255),
+    uploaded_on DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (case_id) REFERENCES cases(case_id)
+);
+
+CREATE TABLE status_log (
+    log_id INT AUTO_INCREMENT PRIMARY KEY,
+    case_id INT,
+    status VARCHAR(50),
+    updated_on DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (case_id) REFERENCES cases(case_id)
+);
+
+
+==================================================================
+
