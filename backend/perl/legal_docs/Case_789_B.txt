@@ -1,0 +1,4 @@
+Client Name: Bob Smith
+Case ID: 789
+Document Type: Evidence Summary
+Details: Summary of submitted evidence.
