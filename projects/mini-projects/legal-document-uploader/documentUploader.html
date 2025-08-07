@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Legal Document uploader</title>
+        
+    </head>
+    <body>
+        <h1>Legal Document uploader</h1>
+
+        <div class="Container">
+            <form>
+                <div>
+                    <label>CaseId:</label>
+                    <input type="text" placeholder="Enter CaseId" id="case-id" onkeyup="validateCaseId()">
+                    <span id="case-id-error"></span><br><br
+                </div>
+                <div>
+                    <label>Client Name:</label>
+                    <input type="text" placeholder="Enter Client Name" id="client-name" onkeyup="validateClientName()">
+                    <span id="client-name-error"></span>
+                </div>
+
+                <div>
+                    <label>Document:</label>
+                    <input type="file" id="document-name" accept=".pdf,.doc,.docx"> <br><br>
+                    <span id="document-name-error"></span>
+                </div>
+
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
