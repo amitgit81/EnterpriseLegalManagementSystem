@@ -11,7 +11,7 @@ function validateName() {
         nameError.innerHTML = "Name is required";  // displaying error message if name is empty
         return false;
     }
-    if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){  
+    if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){    // using exec() will be appropriate here. match() generally works same, but it is mostly used to compare with string, while exec() mostly used with regular expression
         nameError.innerHTML = "Write full name"; 
         return true;
     }
