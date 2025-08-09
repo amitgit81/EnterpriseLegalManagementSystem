@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Legal Document uploader</title>
+        <style>
+            .input-group span{
+                margin-bottom: 15px;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Legal Document uploader</h1>
+
+        <div class="Container">
+            <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+                    <div class="input-group">
+                        <label>CaseId:</label>
+                        <input type="text" name="CaseId" placeholder="Enter CaseId" id="case_id" onkeyup="validateCaseId()" required>
+                        <span id="case-id-error"></span><br><br>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Client Name:</label>
+                        <input type="text" name="ClientName" placeholder="Enter Client Name" id="client_name" onkeyup="validateClientName()" required>
+                        <span id="client-name-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Document:</label>
+                        <input type="file" name="Document" id="document_name" accept=".pdf,.doc,.docx" onchange="return validateDocumentName()" required><br><br>
+                        <span id="document-name-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <button type="submit">Submit</button>
+                        <span id="submit-error"></span>
+                    </div>
+            </form>
+
+        </div>
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
+
+

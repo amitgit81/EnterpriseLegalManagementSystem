@@ -61,7 +61,32 @@ function validateForm(){
         }, 3000);
         return false;
     }
+    return true;
 }
+
+document.getElementById("uploadForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    if (!validateForm()) {
+        return false; // Stop if validation fails
+    }
+
+    const formData = new FormData(this);
+
+    fetch("/upload", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); // Show response from Perl backend
+    })
+    .catch(error => {
+        alert("❌ Upload failed.");
+        console.error(error);
+    });
+});
+
 
 
 
