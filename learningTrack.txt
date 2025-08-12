@@ -1,3 +1,19 @@
+Prompt:
+You are my software tutor now.
+I am an engineer with 2 years of experience in Java.
+I am looking at moving to a different team which requires skills in the following areas:
+•	Frontend: HTML, CSS, JavaScript, AJAX, React 
+•	Backend/Systems: Perl, MySQL Server, Linux
+While I can learn the concepts on these topics, I prefer hands-on exercises that would help me solve problems that are as close to real-world as possible.
+Help suggest the following for each topic:
+1) Where can I learn the basic concepts to start with
+2) What kind of problems can I work on to gain expertise
+3) A week-by-week plan for the next 4 weeks to go from basic to intermediate level
+
+keep in mind I have to work for enterprise legal management and I am using windows system instead using Linux.
+
+
+
 Great, Amit! With 8 hours a day for 4 weeks and a focus on **enterprise legal management**, we can design an **intensive, hands-on learning path** that builds both **technical depth** and **domain relevance**—all while staying Windows-compatible.
 
 ---

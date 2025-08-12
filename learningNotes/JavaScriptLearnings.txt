@@ -1,0 +1,119 @@
+====================================================================
+JavaScript
+====================================================================
+
+Q. When is "id" attribute used?
+
+
+
+id attribute is used to uniquely identify an element on a web page. It plays a crucial role in styling, scripting, and navigation.
+
+
+
+Where It’s Used:
+
+* Styling a specific element. (using css)
+* Targeting an element with JavaScript. (taking user input from html to js form)
+* Linking to a section of the page (e.g., <a href="#section1">Go to Section 1</a>).
+* Form labels and accessibility.
+
+
+
+Q. How to get user input in javascript file from html script.
+
+Ans - use id attribute in input tag, and add an eventlistner Ex - "onkeyup"
+
+Ex - <input type="text" placeholder="Enter your name" id="nameError" onkeyup="validateName()">
+
+
+
+===============================================================================================
+
+
+window object in js.
+========================
+
+window object => is a global object, which is parent of root object(mukiya).  (Mukiya ka bhi baap h)
+Ex - console.log(""); is also part of window object.
+
+window object is created by your browser.
+
+
+=======================================================
+
+regular expression
+=======================================================
+
+------to check if an input value is only containing number or not--------------------
+
+if (!/^\d+$/.test(caseid)) {
+    caseIdError.innerHTML = "Only digits are allowed";
+    return false;
+}
+
+
+✅ Why .test() is better here compare to .exec() :
+.exec() returns detailed match info (an array) or null.
+.test() returns a simple true or false, which is perfect for validation.
+So for checking if caseid contains only digits, this is the clean and correct way:
+
+
+✅ Summary:
+Yes, /^\d+$/.exec(caseid) technically works, but it's not ideal for simple true/false checks.
+Use .test() for cleaner, faster, and more readable validation.
+
+=====================================================================================
+
+Q) Can we use * instead of + in regex?
+Yes, you can use * instead of +, but they mean different things:
+
+Symbol	Meaning	Example	What it Matches
++	One or more times	[A-Za-z]+	Matches "John", "Doe" but not "" (empty string)
+*	Zero or more times	[A-Za-z]*	Matches "John", "Doe", and also "" (empty string)
+
+to start a regular expression with any thing,
+	then we will use (upside arror) ^ to indicate.
+
+
+Example - 
+		var onlyNumbers = /^\d+$/;
+
+^ → Start of the string
+\d → Any digit (0–9)
++ → One or more digits
+$ → End of the string
+
+Note - 
+\s{1}  → is used to define one space
+
+?:\s   → One or more groups of a space followed.
+	
+	Ex - (?:\s[A-Za-z]+)+
+	This means:
+
+	“One or more groups of a space followed by letters, but don’t capture them (spaces) to match as string.”
+
+	It’s used to match full names like "John Doe" or "Mary Jane Smith" without saving each word separately.
+	_________________________________________________________________________________________________________
+
+	(?:...) — Non-Capturing Group
+	() → Normally, parentheses in regex capture the matched part so you can use it later.
+	?: → This tells regex not to capture the group. It's just used for grouping, not storing.
+	So (?:...) means:
+
+	“Group this part together, but don’t save it for later use.”
+	___________________________________________________________________________________________________________
+
+
+In regex, Slash (\) is generally used to indicate we are going to use special symbol\character.
+
+
+Example2 - Regex For validating a name: 
+
+if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z]*$/)){    // using exec() will be appropriate here. match() generally works same, but it is mostly used to compare with string, while exec() mostly used with regular expression
+        nameError.innerHTML = "Write full name"; 
+        return false;
+    } 
+
+
+
