@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX learning</title>
+</head>
+<body>
+    <div>
+        <div>  
+            <h3 id="loaddata">This text is going to change on clicking of below button</h3>
+        </div>
+        <button type="button" onclick="changeText()">Change</button>
+    </div>
+    <script>
+
+        function changeText(){
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET','load.txt',true);
+        
+
+            xhr.onreadystatechange = function (){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    document.getElementById('loaddata').innerHTML = xhr.responseText;
+                }
+            }
+            
+            xhr.send();
+
+         }
+
+    </script>
+</body>
+</html>
